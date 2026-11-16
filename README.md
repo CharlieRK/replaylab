@@ -1,5 +1,7 @@
 # ReplayLab
 
+**中文开发步骤、当前进度与本地同步方法：[PROJECT_PLAN.md](PROJECT_PLAN.md)**
+
 A Python project exploring reliable market-event ingestion, deterministic replay,
 and crash recovery. Independent learning project; not affiliated with Two Sigma
 or any exchange. All sample quotes are synthetic, not financial data or advice.
