@@ -1,0 +1,5 @@
+{"ask_size":282,"ask_ticks":9997,"bid_size":760,"bid_ticks":9996,"seq":1,"symbol":"GAMMA","timestamp_ns":1700000000000000000}
+{"ask_size":105,"ask_ticks":10000,"bid_size":755,"bid_ticks":9998,"seq":2,"symbol":"ALFA","timestamp_ns":1700000000001000000}
+{"ask_size":433,"ask_ticks":10000,"bid_size":605,"bid_ticks":9999,"seq":3,"symbol":"GAMMA","timestamp_ns":1700000000002000000}
+{"ask_size":239,"ask_ticks":9994,"bid_size":224,"bid_ticks":9993,"seq":4,"symbol":"ALFA","timestamp_ns":1700000000003000000}
+{"ask_size":204,"ask_ticks":10004,"bid_size":575,"bid_ticks":10003,"seq":5,"symbol":"GAMMA","timestamp_ns":1700000000004000000}
