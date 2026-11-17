@@ -9,3 +9,6 @@ dist/
 *.db
 *.db-*
 data/
+
+# Local development notes
+/PROJECT_PLAN.md

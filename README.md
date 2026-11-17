@@ -1,7 +1,5 @@
 # ReplayLab
 
-**Implementation Steps：[PROJECT_PLAN.md](PROJECT_PLAN.md)**
-
 A Python project exploring reliable market-event ingestion, deterministic replay,
 and crash recovery. Independent learning project; not affiliated with Two Sigma
 or any exchange. All sample quotes are synthetic, not financial data or advice.
@@ -65,17 +63,3 @@ checkpoint will be processed; the source file can be safely re-submitted.
 Recovery will be tested by terminating a child process around transaction commits,
 then comparing recovered state with an uninterrupted run and independent replay.
 No exactly-once claims across external systems or distributed workers.
-
-## Development roadmap
-
-- [x] 1. Schema, deterministic generator, CLI, tests, CI
-- [ ] 2. SQLite event log and duplicate/conflict detection
-- [ ] 3. Quote state and transactional processing checkpoint
-- [ ] 4. Crash injection and restart recovery tests
-- [ ] 5. Independent replay and canonical state comparison
-- [ ] 6. Reproducible ingestion/processing/recovery benchmarks
-- [ ] 7. Small dashboard and v0.1.0 release
-
-Each verified milestone is committed and pushed. Incomplete work stays on development
-branches; CI checks run on pushes and pull requests. Benchmark claims will include
-hardware, Python version, event count, transaction size, and timing boundaries.
