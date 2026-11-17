@@ -31,6 +31,19 @@ On Windows, replace `/tmp/quotes.jsonl` with a local path.
 The generator writes to stdout; shell redirection overwrites the target file.
 For the committed five-event fixture: `replaylab validate examples/quotes.jsonl`.
 
+### Windows PowerShell without activation
+
+```powershell
+py -3.12 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -e ".[dev]"
+.\.venv\Scripts\python.exe -m replaylab validate examples\quotes.jsonl
+.\.venv\Scripts\python.exe -m pytest -q
+```
+
+The module entry point uses the selected Python environment. CLI tests launch
+that same interpreter, so activating the environment or adding its Scripts
+folder to PATH is not required. CI runs on both Linux and Windows.
+
 ## Event contract (v1)
 
 | Field | Meaning |

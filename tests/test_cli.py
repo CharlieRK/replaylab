@@ -1,10 +1,13 @@
 import subprocess
+import sys
 
 import pytest
 
 
 def run(*args):
-    return subprocess.run(["replaylab", *args], capture_output=True, text=True)
+    return subprocess.run(
+        [sys.executable, "-m", "replaylab", *args], capture_output=True, text=True
+    )
 
 
 def test_generate_and_validate(tmp_path):
@@ -37,3 +40,10 @@ def test_bad_stream_reports_line(tmp_path, kind):
 def test_invalid_count_and_missing_file():
     assert run("generate", "--count", "-1").returncode == 2
     assert run("validate", "/nonexistent/replaylab.jsonl").returncode == 2
+
+
+def test_cli_without_path(monkeypatch):
+    monkeypatch.setenv("PATH", "")
+    result = run("generate", "--count", "2")
+    assert result.returncode == 0, result.stderr
+    assert len(result.stdout.splitlines()) == 2

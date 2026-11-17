@@ -4,7 +4,13 @@ permissions:
   contents: read
 jobs:
   checks:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -13,6 +19,6 @@ jobs:
       - run: python -m pip install -e '.[dev]'
       - run: ruff check .
       - run: ruff format --check .
-      - run: pytest -q
-      - run: replaylab generate --count 1000 --seed 42 > /tmp/quotes.jsonl
-      - run: replaylab validate /tmp/quotes.jsonl
+      - run: python -m pytest -q
+      - run: replaylab generate --count 1000 --seed 42 > quotes.jsonl
+      - run: replaylab validate quotes.jsonl
